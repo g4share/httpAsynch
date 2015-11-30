@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+apply from: "dependencies.gradle"
+
+version = "0.1.0-SNAPSHOT"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile libraries.log
+    testCompile libraries.test
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
